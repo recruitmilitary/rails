@@ -207,6 +207,8 @@ Please refer to the [Changelog][active-support] for detailed changes.
 
 ### Removals
 
+*   Remove deprecated `SafeBuffer#clone_empty`.
+
 *   Remove deprecated `#to_default_s` from `Array`, `Date`, `DateTime` and `Time`.
 
 *   Remove deprecated support for the pre-Ruby 2.4 behavior of `to_time` returning a `Time` object with local timezone.
