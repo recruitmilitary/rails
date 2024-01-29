@@ -125,6 +125,40 @@
 
     *Rafael Mendonça França*
 
+*   Add an option to `ActiveRecord::Encryption::Encryptor` to disable compression
+
+    Allow compression to be disabled by setting `compress: false`
+
+    ```ruby
+      class User
+        encrypts :name, encryptor: ActiveRecord::Encryption::Encryptor.new(compress: false)
+      end
+    ```
+
+    *Donal McBreen*
+
+*   Deprecate passing strings to `ActiveRecord::Tasks::DatabaseTasks.cache_dump_filename`.
+
+    A `ActiveRecord::DatabaseConfigurations::DatabaseConfig` object should be passed instead.
+
+    *Rafael Mendonça França*
+
+*   Add row_count field to sql.active_record notification
+
+    This field returns the amount of rows returned by the query that emitted the notification.
+
+    This metric is useful in cases where one wants to detect queries with big result sets.
+
+    *Marvin Bitterlich*
+
+*   Consistently raise an `ArgumentError` when passing an invalid argument to a nested attributes association writer.
+
+    Previously, this would only raise on collection associations and produce a generic error on singular associations.
+
+    Now, it will raise on both collection and singular associations.
+
+    *Joshua Young*
+
 *   Fix single quote escapes on default generated MySQL columns
 
     MySQL 5.7.5+ supports generated columns, which can be used to create a column that is computed from an expression.
