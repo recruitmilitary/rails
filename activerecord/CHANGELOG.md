@@ -1,3 +1,7 @@
+*   Deprecated `ENV["SCHEMA_CACHE"]` in favor of `schema_cache_path` in the databse configuration.
+
+    *Rafael Mendonça França*
+
 *   Add `active_record.config.validate_migration_timestamps` option for validating migration timestamps.
 
     When set, validates that the timestamp prefix for a migration is no more than a day ahead of
